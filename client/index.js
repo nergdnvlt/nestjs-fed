@@ -13,7 +13,6 @@ exports.helloPubSub = (event, context) => {
                 posts {
                     id
                     title
-                    authorId
                     user {
                         name
                     }
@@ -66,21 +65,11 @@ exports.helloPubSub = (event, context) => {
                 'apollographql-client-version': '0.8-legacy'
             },
             body:JSON.stringify({ 
-                query: `query getAccountInfo($userId: ID!) {
+                query: `query getLegacyUser($userId: ID!) {
                     user(id: $userId) {
-                        firstName
-                        lastName
-                        address
+                        name
                         username
-                            orders {
-                                products {
-                                    name
-                                    price {
-                                        usdPrice
-                                    }
-                                }
-                            }
-                        }
+                    }
                 }`,
                 variables: {
                     userId: randomUser
