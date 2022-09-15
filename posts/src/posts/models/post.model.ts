@@ -15,4 +15,7 @@ export class Post {
 
   @Field((type) => User)
   user?: User;
+
+  @Field()
+  rating: number;
 }
