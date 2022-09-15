@@ -5,6 +5,7 @@ type Post {
   title: String!
   authorId: Int!
   user: User!
+  rating: Int @deprecated(reason: "Comment ratings were unpopular, sunsetting")
 }
 
 type User @key(fields: "id") {

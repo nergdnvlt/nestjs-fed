@@ -9,13 +9,13 @@ exports.helloPubSub = (event, context) => {
                 'apollographql-client-name': randomClient,
                 'apollographql-client-version': randomVersion
             },
-            body:JSON.stringify({ query: `query getAllProducts {
-                products {
-                    name
-                    brand
-                    price {
-                        usdPrice
-                        priceDecorator
+            body:JSON.stringify({ query: `query getAllPosts {
+                posts {
+                    id
+                    title
+                    authorId
+                    user {
+                        name
                     }
                 }
             }`})
@@ -37,20 +37,11 @@ exports.helloPubSub = (event, context) => {
                 'apollographql-client-version': randomVersion
             },
             body:JSON.stringify({ 
-                query: `query getAccountInfo($userId: ID!) {
-                    user(id: $userId) {
-                        firstName
-                        lastName
-                        address
+                query: `query getUserInfo($userId: ID!) {
+                    getUser(id: $userId) {
+                        name
+                        age
                         email
-                        orders {
-                            products {
-                                name
-                                price {
-                                    usdPrice
-                                }
-                            }
-                        }
                     }
                 }`,
                 variables: {
