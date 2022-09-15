@@ -13,10 +13,12 @@ import { UsersResolver } from './users.resolver';
   imports: [
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
-      autoSchemaFile: {
-        federation: 1,
-        path: './posts.graphql',
-      },
+      typePaths: ['**/*.graphql'],
+      // driver: ApolloFederationDriver,
+      // autoSchemaFile: {
+      //   federation: 1,
+      //   path: './posts.graphql',
+      // },
       buildSchemaOptions: {
         orphanedTypes: [User],
       },
