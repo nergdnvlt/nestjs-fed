@@ -14,7 +14,7 @@ import { UsersResolver } from './users.resolver';
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
       autoSchemaFile: {
-        federation: 2,
+        federation: 1,
         path: './posts.graphql',
       },
       buildSchemaOptions: {

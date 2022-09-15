@@ -13,7 +13,7 @@ import { UsersService } from './users.service';
     GraphQLModule.forRoot<ApolloFederationDriverConfig>({
       driver: ApolloFederationDriver,
       autoSchemaFile: {
-        federation: 2,
+        federation: 1,
         path: './users.graphql',
       },
     }),
